@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivityForResult(intento,0);
                 }
                 if(rbCirculo.isChecked()==true){
-                    Intent intento=new Intent(v.getContext(),Cuadrado.class);
+                    Intent intento=new Intent(v.getContext(),Circulo.class);
                     startActivityForResult(intento,0);
                 }
                 if(rbTriangulo.isChecked()==true){
