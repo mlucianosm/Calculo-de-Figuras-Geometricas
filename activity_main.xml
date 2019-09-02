@@ -8,97 +8,85 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Figuras Geometricas"
-        android:layout_gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioGroup
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView10"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Elija una Opcion" />
+            android:orientation="vertical"
 
-        <RadioButton
-            android:id="@+id/rbCuadrado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cuadrado" />
+            >
 
-        <TextView
-            android:id="@+id/tvCuadrado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Imagen" />
 
-        <RadioButton
-            android:id="@+id/rbRectangulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rectangulo" />
 
-        <TextView
-            android:id="@+id/tvRectangulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Imagen" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Elija una Opcion"
+                />
 
-        <RadioButton
-            android:id="@+id/rbCirculo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Circulo" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvCirculo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Imagen" />
+                <RadioButton
+                    android:id="@+id/rbCuadrado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cuadrado" />
 
-        <RadioButton
-            android:id="@+id/rbTriangulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Triangulo" />
+                <RadioButton
+                    android:id="@+id/rbRectangulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rectangulo" />
 
-        <TextView
-            android:id="@+id/tvTriangulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Imagen" />
 
-        <RadioButton
-            android:id="@+id/rbRombo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rombo" />
 
-        <TextView
-            android:id="@+id/tvRombo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Imagen" />
 
-        <Button
-            android:id="@+id/btnIngresar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="INGRESAR" />
 
-        <Button
-            android:id="@+id/btnAcercade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Acerca De" />
-    </RadioGroup>
+                <RadioButton
+                    android:id="@+id/rbCirculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Circulo" />
+
+
+
+                <RadioButton
+                    android:id="@+id/rbTriangulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Triangulo" />
+
+
+
+                <RadioButton
+                    android:id="@+id/rbRombo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rombo" />
+
+
+
+                <Button
+                    android:id="@+id/btnIngresar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="INGRESAR" />
+
+                <Button
+                    android:id="@+id/btnAcercade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Acerca De" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

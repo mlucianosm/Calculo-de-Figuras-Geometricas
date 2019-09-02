@@ -7,7 +7,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Cuadrado">
-
+    <TextView
+        android:id="@+id/tvCuadrado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cuadrado"
+        />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@mipmap/cuadrado" />
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
@@ -20,32 +30,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Valor Lado 1" />
+        android:inputType="numberDecimal"
+        android:hint="Valor Lado 1" />
 
     <EditText
         android:id="@+id/etLado2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Valor Lado 2" />
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:hint="Valor Lado 2" />
 
     <EditText
         android:id="@+id/etLado3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Valor Lado 3" />
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:hint="Valor Lado 3" />
 
     <EditText
         android:id="@+id/etLado4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Valor Lado 4" />
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:hint="Valor Lado 4" />
 
     <TextView
         android:id="@+id/textView7"
