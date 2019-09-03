@@ -15,36 +15,56 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-
-            >
+            android:orientation="vertical" >
 
 
-
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:background="#ffffff"
+                android:orientation="horizontal" />
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Elija una Opcion"
-                />
+                android:background="#ffffff"
+                android:text="Seleccione una Opcion"
+                android:textColor="#B43940"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"/>/>
 
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="4dp"
+                android:background="#B43940"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"/>
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:layout_gravity="center">
 
                 <RadioButton
                     android:id="@+id/rbCuadrado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cuadrado" />
+                    android:text="Cuadrado"
+                    android:textColor="#B43940"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="10sp"/>
+
+
 
                 <RadioButton
                     android:id="@+id/rbRectangulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rectangulo" />
-
-
+                    android:text="Rectangulo"
+                    android:textColor="#B43940"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="10sp"/>
 
 
 
@@ -52,7 +72,10 @@
                     android:id="@+id/rbCirculo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Circulo" />
+                    android:text="Circulo"
+                    android:textColor="#B43940"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="10sp"/>
 
 
 
@@ -60,7 +83,10 @@
                     android:id="@+id/rbTriangulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Triangulo" />
+                    android:text="Triangulo"
+                    android:textColor="#B43940"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="10sp"/>
 
 
 
@@ -68,22 +94,48 @@
                     android:id="@+id/rbRombo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rombo" />
+                    android:text="Rombo"
+                    android:textColor="#B43940"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="10sp"/>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="4dp"
+                    android:background="#B43940"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginRight="10sp"/>
 
-
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="105dp"
+                    android:background="#ffffff"
+                    android:orientation="horizontal" />
 
                 <Button
                     android:id="@+id/btnIngresar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="INGRESAR" />
-
+                    android:text="INGRESAR"
+                    android:background="#B43940"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginRight="10sp"/>/>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="#ffffff"
+                    android:orientation="horizontal"
+                    />
                 <Button
                     android:id="@+id/btnAcercade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Acerca De" />
-
+                    android:text="Acerca De"
+                    android:background="#B43940"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginRight="10sp"/>
             </RadioGroup>
 
         </LinearLayout>

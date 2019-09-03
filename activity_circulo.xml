@@ -6,26 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Cuadrado">
+    tools:context=".Circulo">
 
     <TextView
         android:id="@+id/tvCirculo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Circulo" />
+        android:text="Circulo"
+        android:layout_marginLeft="120sp" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@mipmap/circulo" />
+        app:srcCompat="@mipmap/circulo"
+        android:layout_marginLeft="140sp" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Circulo" />
+
 
     <EditText
         android:id="@+id/etRadio"
@@ -33,7 +30,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:hint="Valor Radio" />
+        android:hint="Valor Radio"
+        android:layout_marginLeft="10sp" />
 
 
     <TextView
@@ -41,7 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Calcular" />
+        android:text="Tipo de Calculo"
+        />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -51,24 +50,34 @@
             android:id="@+id/rbPerimetro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Perimetro" />
+            android:text="Perimetro"
+            android:textColor="#B43940"
+            android:layout_marginLeft="10sp" />
 
         <RadioButton
             android:id="@+id/rbArea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Area" />
+            android:text="Area"
+            android:textColor="#B43940"
+             android:layout_marginLeft="10sp" />
 
         <RadioButton
             android:id="@+id/rbDiametro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Diametro" />
+            android:text="Diametro"
+            android:textColor="#B43940"
+            android:layout_marginLeft="10sp" />
 
         <Button
             android:id="@+id/btnCalcular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CALCULAR" />
+            android:text="CALCULAR"
+            android:background="#B43940"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"/>
     </RadioGroup>
 </LinearLayout>
