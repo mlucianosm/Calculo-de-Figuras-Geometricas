@@ -1,6 +1,6 @@
 
 eva 1 Aplicaciones moviles 2 , W.Quintanilla M.Sanchez 29-08-2019
-# Calculos de Figuras Geometricas :phone:
+# Calculos de Figuras Geometricas :iphone:
 
 Desarrollo utilizando multiples componentes android, para crear 
 una APP con Android Studio, la cual se inicia mostrando un Menu principal con 5 tipos de Figuras.
