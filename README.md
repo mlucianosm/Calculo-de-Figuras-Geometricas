@@ -1,6 +1,6 @@
-# eva1aplicmovil2wqms
+
 eva 1 Aplicaciones moviles 2 , W.Quintanilla M.Sanchez 29-08-2019
-# Calculoa Geometricos :smartphone:
+# Calculos de Figuras Geometricas :smartphone:
 
 Desarrollo utilizando multiples componentes android, para crear 
 una APP con Android Studio, la cual se inicia mostrando un Menu principal con 5 tipos de Figuras.
@@ -28,4 +28,4 @@ Rombo)  : Permite visualizar graficamente una interfaz donde aparece
   en otra interfaz.
 
 
-![CATALOGO HOGAR](https://github.com/mlucianosm/IONIC-CATALOGO-HOGAR/blob/master/src/assets/catalogo.png)
+![CATALOGO HOGAR](https://github.com/mlucianosm/IONIC-CATALOGO-HOGAR/blob/master/src/assets/eva1Inicio.png)
