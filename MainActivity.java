@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnAcercade,btnIngresar;
@@ -54,7 +55,15 @@ public class MainActivity extends AppCompatActivity {
                     Intent intento=new Intent(v.getContext(),Rombo.class);
                     startActivityForResult(intento,0);
                 }
+                if((rbCuadrado.isChecked()==false)&&(rbRectangulo.isChecked()==false)&&(rbCirculo.isChecked()==false) &&
+                        (rbTriangulo.isChecked()==false) && (rbRombo.isChecked()==false) )
+                {
+                    Toast error=Toast.makeText(v.getContext(),"Seleccione Figura Geometrica",Toast.LENGTH_LONG);
+                    error.show();
+                }
             }
-        });
+        }
+
+        );
     }
 }

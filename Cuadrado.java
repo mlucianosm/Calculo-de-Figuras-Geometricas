@@ -55,7 +55,7 @@ public class Cuadrado extends AppCompatActivity {
 
                 if(etLado1.getText().toString().isEmpty())
                 {
-                    Toast error=Toast.makeText(v.getContext(),"CAMPO VACIO",Toast.LENGTH_LONG);
+                    Toast error=Toast.makeText(v.getContext(),"Ingrese Valor en el Campo",Toast.LENGTH_LONG);
                     error.show();
                 }else{
                     Double lado1,lado2,lado3,lado4;
@@ -64,40 +64,53 @@ public class Cuadrado extends AppCompatActivity {
                     lado2=Double.parseDouble(etLado2.getText().toString());
                     lado3=Double.parseDouble(etLado3.getText().toString());
                     lado4=Double.parseDouble(etLado4.getText().toString());
-                    if(rbPerimetro.isChecked()==true){
-                        resultado=lado1+lado2+lado3+lado4;
-                        Intent intento= new Intent(v.getContext(),Resultado.class);
-                        intento.putExtra("Figura","Cuadrado");
-                        intento.putExtra("Calculo",rbPerimetro.getText().toString());
-                        intento.putExtra("Resultado",Double.toString(resultado));
-                        intento.putExtra("Metrica","Metros");
-                        startActivity(intento);
+                    if ((lado1 < 1) || (lado3 < 1)) {
+                        Toast error = Toast.makeText(v.getContext(), "Ingrese Valor sobre Cero en el Campo", Toast.LENGTH_LONG);
+                        error.show();
+                    }else {
+                        if (rbPerimetro.isChecked() == true) {
+                            resultado = lado1 + lado2 + lado3 + lado4;
+                            Intent intento = new Intent(v.getContext(), Resultado.class);
+                            intento.putExtra("Figura", "Cuadrado");
+                            intento.putExtra("Calculo", rbPerimetro.getText().toString());
+                            intento.putExtra("Resultado", Double.toString(resultado));
+                            intento.putExtra("Metrica", "Metros");
+                            startActivity(intento);
 
 
-                    }
-                    if(rbArea.isChecked()==true){
-                        resultado=lado1*lado1;
-                        Intent intento= new Intent(v.getContext(),Resultado.class);
-                        intento.putExtra("Figura","Cuadrado");
-                        intento.putExtra("Calculo",rbArea.getText().toString());
-                        intento.putExtra("Resultado",Double.toString(resultado));
-                        intento.putExtra("Metrica","Metros Cuadrados");
-                        startActivity(intento);
+                        }
+                        if (rbArea.isChecked() == true) {
+                            resultado = lado1 * lado1;
+                            Intent intento = new Intent(v.getContext(), Resultado.class);
+                            intento.putExtra("Figura", "Cuadrado");
+                            intento.putExtra("Calculo", rbArea.getText().toString());
+                            intento.putExtra("Resultado", Double.toString(resultado));
+                            intento.putExtra("Metrica", "Metros Cuadrados");
+                            startActivity(intento);
 
-                    }
-                    if(rbDiagonal.isChecked()==true){
-                        resultado=Math.sqrt(2)*lado1;
-                        Intent intento= new Intent(v.getContext(),Resultado.class);
-                        intento.putExtra("Figura","Cuadrado");
-                        intento.putExtra("Calculo",rbDiagonal.getText().toString());
-                        intento.putExtra("Resultado",Double.toString(resultado));
-                        intento.putExtra("Metrica","Metros");
-                        startActivity(intento);
+                        }
+                        if (rbDiagonal.isChecked() == true) {
+                            resultado = Math.sqrt(2) * lado1;
+                            String area4, area5;
+                            area4 = Double.toString(resultado);
+                            area5 = area4.substring(0, 5);
+                            Intent intento = new Intent(v.getContext(), Resultado.class);
+                            intento.putExtra("Figura", "Cuadrado");
+                            intento.putExtra("Calculo", rbDiagonal.getText().toString());
+                            intento.putExtra("Resultado", area5);
+                            intento.putExtra("Metrica", "Metros");
+                            startActivity(intento);
 
+                        }
+                        if ((rbPerimetro.isChecked() == false) && (rbArea.isChecked() == false) && (rbDiagonal.isChecked() == false)) {
+                            Toast error = Toast.makeText(v.getContext(), "Seleccione Tipo de Calculo", Toast.LENGTH_LONG);
+                            error.show();
+                        }
                     }
                 }
 
             }
+
         });
     }
 }

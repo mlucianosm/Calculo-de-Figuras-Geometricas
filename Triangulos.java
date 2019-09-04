@@ -40,6 +40,11 @@ public class Triangulos extends AppCompatActivity {
                     Intent intento=new Intent(v.getContext(),TEscaleno.class);
                     startActivityForResult(intento,0);
                 }
+                if((rbEquilatero.isChecked()==false) && (rbIsocele.isChecked()==false) && (rbEscaleno.isChecked()==false))
+                {
+                    Toast error=Toast.makeText(v.getContext(),"Seleccione Tipo de Triangulo",Toast.LENGTH_LONG);
+                    error.show();
+                }
             }
         });
 

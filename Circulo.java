@@ -29,42 +29,48 @@ public class Circulo extends AppCompatActivity {
             public void onClick(View v) {
                 if(etRadio.getText().toString().isEmpty())
                 {
-                    Toast error=Toast.makeText(v.getContext(),"CAMPO VACIO",Toast.LENGTH_LONG);
+                    Toast error=Toast.makeText(v.getContext(),"Ingrese Valor en el Campo",Toast.LENGTH_LONG);
                     error.show();
                 }else{
                     double resultado,radio;
                     radio=Double.parseDouble(etRadio.getText().toString());
-                    if(rbPerimetro.isChecked()==true)
-                    {
-                        resultado=2*Math.PI*radio;
-                        Intent intento= new Intent(v.getContext(),Resultado.class);
-                        intento.putExtra("Figura","Circulo");
-                        intento.putExtra("Calculo",rbPerimetro.getText().toString());
-                        intento.putExtra("Resultado",Double.toString(resultado));
-                        intento.putExtra("Metrica","Metros");
-                        startActivity(intento);
+                    if ((radio < 1)) {
+                        Toast error = Toast.makeText(v.getContext(), "Ingrese Valor sobre Cero en el Campo", Toast.LENGTH_LONG);
+                        error.show();
+                    }else {
+                        if (rbPerimetro.isChecked() == true) {
+                            resultado = 2 * Math.PI * radio;
+                            Intent intento = new Intent(v.getContext(), Resultado.class);
+                            intento.putExtra("Figura", "Circulo");
+                            intento.putExtra("Calculo", rbPerimetro.getText().toString());
+                            intento.putExtra("Resultado", Double.toString(resultado));
+                            intento.putExtra("Metrica", "Metros");
+                            startActivity(intento);
 
-                    }
-                    if(rbArea.isChecked()==true)
-                    {
-                        resultado=Math.PI*(radio*radio);
-                        Intent intento= new Intent(v.getContext(),Resultado.class);
-                        intento.putExtra("Figura","Circulo");
-                        intento.putExtra("Calculo",rbArea.getText().toString());
-                        intento.putExtra("Resultado",Double.toString(resultado));
-                        intento.putExtra("Metrica","Metros");
-                        startActivity(intento);
+                        }
+                        if (rbArea.isChecked() == true) {
+                            resultado = Math.PI * (radio * radio);
+                            Intent intento = new Intent(v.getContext(), Resultado.class);
+                            intento.putExtra("Figura", "Circulo");
+                            intento.putExtra("Calculo", rbArea.getText().toString());
+                            intento.putExtra("Resultado", Double.toString(resultado));
+                            intento.putExtra("Metrica", "Metros");
+                            startActivity(intento);
 
-                    }
-                    if(rbDiametro.isChecked()==true)
-                    {
-                        resultado=2*radio;
-                        Intent intento= new Intent(v.getContext(),Resultado.class);
-                        intento.putExtra("Figura","Circulo");
-                        intento.putExtra("Calculo",rbDiametro.getText().toString());
-                        intento.putExtra("Resultado",Double.toString(resultado));
-                        intento.putExtra("Metrica","Metros");
-                        startActivity(intento);
+                        }
+                        if (rbDiametro.isChecked() == true) {
+                            resultado = 2 * radio;
+                            Intent intento = new Intent(v.getContext(), Resultado.class);
+                            intento.putExtra("Figura", "Circulo");
+                            intento.putExtra("Calculo", rbDiametro.getText().toString());
+                            intento.putExtra("Resultado", Double.toString(resultado));
+                            intento.putExtra("Metrica", "Metros");
+                            startActivity(intento);
+                        }
+                        if ((rbPerimetro.isChecked() == false) && (rbArea.isChecked() == false) && (rbPerimetro.isChecked() == false)) {
+                            Toast error = Toast.makeText(v.getContext(), "Seleccione Tipo de Calculo", Toast.LENGTH_LONG);
+                            error.show();
+                        }
                     }
                 }
 

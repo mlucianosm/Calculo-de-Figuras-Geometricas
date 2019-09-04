@@ -48,51 +48,70 @@ public class TIsocele extends AppCompatActivity {
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 if(etLado1.getText().toString().isEmpty()||etLado2.getText().toString().isEmpty()||etLado3.getText().toString().isEmpty())
                 {
-                    Toast error=Toast.makeText(v.getContext(),"CAMPO VACIO",Toast.LENGTH_LONG);
+                    Toast error=Toast.makeText(v.getContext(),"Ingrese Valor en el Campo",Toast.LENGTH_LONG);
                     error.show();
                 }else{
                     double lado1,lado2,lado3,resultado;
                     lado1=Double.parseDouble(etLado1.getText().toString());
                     lado2=Double.parseDouble(etLado2.getText().toString());
                     lado3=Double.parseDouble(etLado3.getText().toString());
-                    if(rbPerimetro.isChecked()==true)
-                    {
-                        resultado=lado1+lado2+lado3;
-                        Intent intento= new Intent(v.getContext(),Resultado.class);
-                        intento.putExtra("Figura","Cuadrado");
-                        intento.putExtra("Calculo",rbPerimetro.getText().toString());
-                        intento.putExtra("Resultado",Double.toString(resultado));
-                        intento.putExtra("Metrica","Metros");
-                        startActivity(intento);
-                    }
-                    if(rbArea.isChecked()==true)
-                    {
-                        resultado=(lado1+lado2+lado3)/2;
-                        Double alturalado1,alturalado2,alturalado3,area1,area2,area3;
-                        alturalado1=2/lado1*Math.sqrt(resultado*(resultado-lado1)*(resultado-lado2)*(resultado-lado3));
-                        alturalado2=2/lado2*Math.sqrt(resultado*(resultado-lado1)*(resultado-lado2)*(resultado-lado3));
-                        alturalado3=2/lado3*Math.sqrt(resultado*(resultado-lado1)*(resultado-lado2)*(resultado-lado3));
-                        area1=(lado1*alturalado1)/2;
-                        area2=(lado2*alturalado2)/2;
-                        area3=(lado3*alturalado3)/2;
-                        Intent intento= new Intent(v.getContext(),Resultado.class);
-                        intento.putExtra("Figura","Cuadrado");
-                        intento.putExtra("Calculo",rbArea.getText().toString());
-                        intento.putExtra("Resultado","Area lado 1 y 2= "+Double.toString(area1)+" Metros Cuadrados y Area lado 3= "+Double.toString(area3));
-                        intento.putExtra("Metrica","Metros Cuadrados");
-                        startActivity(intento);
-                    }
-                    if(rbSemiperimetro.isChecked()==true)
-                    {
-                        resultado=(lado1+lado2+lado3)/2;
-                        Intent intento= new Intent(v.getContext(),Resultado.class);
-                        intento.putExtra("Figura","Cuadrado");
-                        intento.putExtra("Calculo",rbSemiperimetro.getText().toString());
-                        intento.putExtra("Resultado",Double.toString(resultado));
-                        intento.putExtra("Metrica","Metros");
-                        startActivity(intento);
+                    if ((lado1 < 1) || (lado2 < 1) || (lado3 < 1)) {
+                        Toast error = Toast.makeText(v.getContext(), "Ingrese Valor sobre Cero en el Campo", Toast.LENGTH_LONG);
+                        error.show();
+                    }else {
+                        if (lado1 == lado3) {
+                            Toast error = Toast.makeText(v.getContext(), "EL TRIANGULO TIENE TODOS SUS LADOS IGUALES", Toast.LENGTH_LONG);
+                            error.show();
+                        } else {
+                            if (rbPerimetro.isChecked() == true) {
+                                resultado = lado1 + lado2 + lado3;
+                                Intent intento = new Intent(v.getContext(), Resultado.class);
+                                intento.putExtra("Figura", "Triangulo Isoceles");
+                                intento.putExtra("Calculo", rbPerimetro.getText().toString());
+                                intento.putExtra("Resultado", Double.toString(resultado));
+                                intento.putExtra("Metrica", "Metros");
+                                startActivity(intento);
+                            }
+                            if (rbArea.isChecked() == true) {
+
+                                resultado = (lado1 + lado2 + lado3) / 2;
+                                double area1, area2, area3, alturalado1, alturalado2, alturalado3;
+                                alturalado1 = lado1 * lado1;
+                                alturalado2 = (lado3 * lado3) / 4;
+                                alturalado3 = Math.sqrt(alturalado1 - alturalado2);
+                                area3 = (lado3 * alturalado3) / 2;
+
+                                String area4, area5;
+                                area4 = Double.toString(area3);
+                                area5 = area4.substring(0, 5);
+
+
+                                Intent intento = new Intent(v.getContext(), Resultado.class);
+                                intento.putExtra("Figura", "Triangulo Isoceles");
+                                intento.putExtra("Calculo", rbArea.getText().toString());
+                                intento.putExtra("Resultado", " " + area5);
+                                intento.putExtra("Metrica", "Metros Cuadrados");
+                                startActivity(intento);
+                            }
+                            if (rbSemiperimetro.isChecked() == true) {
+                                resultado = (lado1 + lado2 + lado3) / 2;
+                                Intent intento = new Intent(v.getContext(), Resultado.class);
+                                intento.putExtra("Figura", "Triangulo Isoceles");
+                                intento.putExtra("Calculo", rbSemiperimetro.getText().toString());
+                                intento.putExtra("Resultado", Double.toString(resultado));
+                                intento.putExtra("Metrica", "Metros");
+                                startActivity(intento);
+                            }
+                        }
+
+                        if ((rbPerimetro.isChecked() == false) && (rbArea.isChecked() == false) && (rbSemiperimetro.isChecked() == false)) {
+                            Toast error = Toast.makeText(v.getContext(), "Seleccione Tipo de Calculo", Toast.LENGTH_LONG);
+                            error.show();
+                        }
                     }
                 }
 
